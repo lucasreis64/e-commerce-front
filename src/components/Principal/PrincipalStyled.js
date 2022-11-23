@@ -21,6 +21,7 @@ export const ProdutoStyled = styled.div`
   img {
     width: 80%;
     height: 200px;
+    background-color: blue;
   }
 `;
 
