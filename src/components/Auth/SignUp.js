@@ -27,7 +27,7 @@ export default function SignUp(params) {
             repeatPassword: repeatPassword,
             password: password,
         });
-        login.then(() => navigate("/"));
+        login.then(() => navigate("/sign-in"));
         login.catch(({ response }) => {
             if (response.status === 409) {
                 Swal.fire({
@@ -88,7 +88,7 @@ export default function SignUp(params) {
                         />
                         <button>Cadastrar</button>
                     </form>
-                    <Link to="/">
+                    <Link to="/sign-in">
                         <p>Já tem uma conta? Entre agora!</p>
                     </Link>
                 </>
