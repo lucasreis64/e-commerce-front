@@ -25,7 +25,7 @@ export default function SignIn(params) {
 
         if (userInfoCopy !== null) {
             setUserInfo(userInfoCopy);
-            navigate("/account");
+            navigate("/principal");
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -43,7 +43,7 @@ export default function SignIn(params) {
                 localStorage.setItem("userInfo", userInfoSerializada);
             }
             setUserInfo(response.data);
-            navigate("/account");
+            navigate("/principal");
         });
         login.catch((response) => {
             setLoading(false);
