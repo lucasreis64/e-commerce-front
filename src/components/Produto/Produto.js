@@ -4,10 +4,12 @@ import { ProdutoPage } from "./ProdutoStyled";
 
 export default function Produto(params) {
     const [produto, setProduto] = useState(null)
+
+
     
     async function getProduto() {
         try {
-            const productGet = await axios.get(`https://e-commerce-projetao-back.onrender.com/products?category=${category}&id=${id}`)
+            const productGet = await axios.get(`https://e-commerce-projetao-back.onrender.com/products?category=${'category'}&id=${'id'}`)
             setProduto(productGet)
         } catch (error) {
             console.log(error)
