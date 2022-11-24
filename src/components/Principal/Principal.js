@@ -30,7 +30,7 @@ export default function Principal({}) {
     <>
       <Container>
         <PrincipalStyled>
-          <NavBar />
+          
           
 
           <h1>Recomendados</h1>
