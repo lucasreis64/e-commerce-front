@@ -1,6 +1,5 @@
 import FootBar from "../FootBar/FootBar";
-import NavBar from "../NavBar/NavBar";
-import SideBar from "../SideBar/Sidebar";
+
 import {
   Container,
   PrincipalStyled,
@@ -40,7 +39,7 @@ export default function Principal({}) {
                 <div key={b}>
                   <h2>{a.titulo}</h2>
                   <ProdutoeDescricao>
-                    <img src={a.imagem} />
+                    <img alt = "" src={a.imagem} />
                     <p>{a.descrição}</p>
                     <h3>{a.preço}</h3>
                   </ProdutoeDescricao>
