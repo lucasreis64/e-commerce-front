@@ -13,7 +13,7 @@ box-sizing: border-box;
 export const SmartPhoneContainer = styled.div`
 width: 400px;
 height: 85vh;
-background-color: ${props=> props.noturno?'#1C1C1C':'#e5e5e5'};
+background-color: ${props=> props.noturno?'#1C1C1C':'#514C4C'};
 box-sizing: border-box;
 overflow: scroll;
 position: relative;

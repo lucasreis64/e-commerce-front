@@ -1,4 +1,3 @@
-import NavBar from "../NavBar/NavBar";
 import { PrincipalStyled, ProdutoeDescricao, ProdutoStyled } from "./PrincipalStyled";
 
 
@@ -15,7 +14,6 @@ export default function Principal({}) {
   return (
     <>
       <PrincipalStyled>
-        <NavBar />
         <h1>Recomendados</h1>
         {produto.map((a,b) => {
           return (
