@@ -7,12 +7,14 @@ import Sessao from "../Sessao/Sessao";
 import Produto from "../Produto/Produto";
 import Carrinho from "../Carrinho/Carrinho";
 import Principal from "../Principal/Principal";
+import NavBar from "../NavBar/NavBar";
 
 function App() {
     return (
         <Screen>
             <GlobalStyle />
             <SmartPhoneContainer>
+                <NavBar/>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/sign-in" element={<SignIn />} />
