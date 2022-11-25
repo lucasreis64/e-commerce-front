@@ -30,9 +30,7 @@ export default function Principal({}) {
     <>
       <Container>
         <PrincipalStyled>
-          <NavBar />
-          
-
+          <NavBar />  
           <h1>Recomendados</h1>
           {produto.map((a, b) => {
             return (
@@ -40,7 +38,7 @@ export default function Principal({}) {
                 <div key={b}>
                   <h2>{a.titulo}</h2>
                   <ProdutoeDescricao>
-                    <img src={a.imagem} />
+                    <img alt = "" src={a.imagem} />
                     <p>{a.descrição}</p>
                     <h3>{a.preço}</h3>
                   </ProdutoeDescricao>

@@ -20,9 +20,9 @@ export default function FootBar() {
         <RedesSociais>
           <p>Segue a gente nas redes sociais!</p>
           <Icons>
-            <img src={instagramIcom} />
-            <img src={whatsappIcom} />
-            <img src={twiteerIcom} />
+            <img src={instagramIcom} alt=""/>
+            <img src={whatsappIcom} alt=""/>
+            <img src={twiteerIcom} alt=""/>
           </Icons>
         </RedesSociais>
       </FootBarStyled>
