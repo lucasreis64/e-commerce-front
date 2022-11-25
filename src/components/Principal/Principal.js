@@ -1,5 +1,6 @@
 import FootBar from "../FootBar/FootBar";
-
+import NavBar from "../NavBar/NavBar";
+import SideBar from "../SideBar/Sidebar";
 import {
   Container,
   PrincipalStyled,
@@ -29,9 +30,7 @@ export default function Principal({}) {
     <>
       <Container>
         <PrincipalStyled>
-          
-          
-
+          <NavBar />  
           <h1>Recomendados</h1>
           {produto.map((a, b) => {
             return (
