@@ -9,6 +9,9 @@ align-items: center;
 width: 100%;
 background-color: #303030;
 height: 10%;
+position: fixed;
+top:0;
+left: 0;
 
 .menuicon{
     margin-left: 3%;

@@ -15,6 +15,7 @@ width: 400px;
 height: 85vh;
 background-color: ${props=> props.noturno?'#1C1C1C':'#514C4C'};
 box-sizing: border-box;
+padding: 120px 4% 0 4%;
 overflow: scroll;
 position: relative;
 border-radius: 30px;
