@@ -20,15 +20,20 @@ export default function NavBar() {
 
   return (
     <>
-    {sideBar ? <SideBar /> : null}
+      {sideBar ? <SideBar /> : null}
       <NavbarStyled>
-        <img className="menuicon"  src={menuIcon} onClick={handleClick}></img>
-        <img className="logoicon" src={logoescrita}></img>
-        <img className="darkmodeicon" src={darkmodeIcon}></img>
-        <img className="usericon" src={userIcon}></img>
-        <Link to="/carrinho">
-          <img className="carticon" src={cartIcon}></img>
-        </Link>
+        <img
+          className="menuicon"
+          alt=""
+          src={menuIcon}
+          onClick={handleClick}
+        ></img>
+        <img className="logoicon" alt="" src={logoescrita}></img>
+        <img className="darkmodeicon" alt="" src={darkmodeIcon}></img>
+        <img className="usericon" alt="" src={userIcon}></img>
+         <Link to="/carrinho">
+          <img className="carticon" alt="" src={cartIcon}></img>
+        </Link> 
       </NavbarStyled>
     </>
   );
