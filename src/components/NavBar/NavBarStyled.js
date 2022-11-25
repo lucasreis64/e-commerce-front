@@ -9,10 +9,11 @@ align-items: center;
 width: 100%;
 background-color: #303030;
 height: 10%;
-position: fixed;
-top:0;
-left: 0;
 z-index: 1;
+
+position: sticky;
+left: 0%;
+top: 0%;
 
 .menuicon{
     margin-left: 3%;
