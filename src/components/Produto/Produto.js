@@ -34,7 +34,7 @@ export default function Produto() {
             {!produto ? (
                 "Carregando..."
             ) : (
-                <ProdutoPage>
+                <ProdutoPage disponivel={produto.inStock>0?true:false}>
                     <ImgTitulo>
                         <img src={produto.img} alt="" />
                         <h1>{produto.title}</h1>

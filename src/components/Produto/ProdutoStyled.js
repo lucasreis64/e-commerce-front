@@ -18,6 +18,7 @@ export const ProdutoPage = styled.div`
             font-size: 25px;
             width: 100%;
             text-align: left;
+            font-weight: 400;
         }
 
         button{
@@ -34,6 +35,7 @@ export const ProdutoPage = styled.div`
 
     h1 {
         color: ${(props) => (props.disponivel ? "green" : "red")};
+        font-weight: bold;
     }
 
     .descricao{
@@ -41,6 +43,7 @@ export const ProdutoPage = styled.div`
         h1{
             color: white !important;
             margin-bottom: 15px;
+            font-weight: bold;
         }
         p{
             word-wrap: break-word;
@@ -59,5 +62,6 @@ export const ImgTitulo = styled.div`
     h1 {
         color: white !important;
         word-wrap: break-word;
+        font-weight: 400;
     }
 `;
