@@ -12,6 +12,7 @@ height: 10%;
 position: fixed;
 top:0;
 left: 0;
+z-index: 1;
 
 .menuicon{
     margin-left: 3%;
