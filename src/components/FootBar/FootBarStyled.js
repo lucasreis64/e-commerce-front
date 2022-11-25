@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const FootBarStyled = styled.div`
+  margin-top: 30px;
   width: 100%;
   height: fit-content;
   background-color: #303030;
+  position: absolute;
+  left: 0px;
 `;
 
 export const Categorias = styled.div`
