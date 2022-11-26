@@ -8,6 +8,7 @@ import Produto from "../Produto/Produto";
 import Carrinho from "../Carrinho/Carrinho";
 import Principal from "../Principal/Principal";
 import NavBar from "../NavBar/NavBar";
+import MinhaConta from "../MnhaConta/MinhaConta";
 
 function App() {
     return (
@@ -15,7 +16,9 @@ function App() {
         <GlobalStyle />
         <SmartPhoneContainer>
           <BrowserRouter>
+            
             <NavBar />
+
             <Routes>
               <Route path="/sign-in" element={<SignIn />} />
               <Route path="/sign-up" element={<SignUp />} />
