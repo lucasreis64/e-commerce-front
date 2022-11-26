@@ -7,11 +7,15 @@ import cartIcon from "../../img/cartIcon.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import SideBar from "../SideBar/Sidebar";
+import MinhaConta from "../MnhaConta/MinhaConta";
 
 export default function NavBar() {
   const [sideBar, setSideBar] = useState(false);
+  const [myAccount, setMyAccount] = useState(false);
 
-    const showSidebar = () => setSideBar(true)
+    const showSidebar = () => setSideBar(true);
+    const showMyAccount = () => setMyAccount(true);
+
   
 
   return (
@@ -24,11 +28,14 @@ export default function NavBar() {
         </Link>
         <RightIcons>
           <img className="darkmodeicon" alt="" src={darkmodeIcon}></img>
-          <img className="usericon" alt="" src={userIcon}></img>
+          <img className="usericon" alt="" src={userIcon} onClick={showMyAccount}/>
+            {myAccount && <MinhaConta active ={setMyAccount} />}
+          
           <Link to="/carrinho">
             <img className="carticon" alt="" src={cartIcon}></img>
           </Link>
         </RightIcons>
+        
       </NavbarStyled>
     </>
   );
