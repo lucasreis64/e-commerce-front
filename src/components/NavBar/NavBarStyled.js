@@ -10,11 +10,20 @@ width: 100%;
 background-color: #303030;
 height: 10%;
 
-.menuicon{
-    margin-left: 3%;
+img{
+    margin-left: 10px;
 }
-.carticon{
-    margin-right: 3%;
-}
+
 `;
+
+export const RightIcons = styled.div`
+
+margin-right: 10%;
+display: flex;
+
+img{
+    margin: 8px;
+}
+
+`
 
