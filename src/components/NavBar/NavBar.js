@@ -11,23 +11,19 @@ import SideBar from "../SideBar/Sidebar";
 export default function NavBar() {
   const [sideBar, setSideBar] = useState(false);
 
-    function handleClick(){
-      
-        setSideBar(true)
-      
-    }
+    const showSidebar = () => setSideBar(true)
   
 
   return (
     <>
-      {sideBar ? <SideBar /> : null}
+      
       <NavbarStyled>
         <img
           className="menuicon"
           alt=""
           src={menuIcon}
-          onClick={handleClick}
-        ></img>
+          onClick={showSidebar}
+        /> {sideBar && <SideBar active={setSideBar} />}
         <img className="logoicon" alt="" src={logoescrita}></img>
         <img className="darkmodeicon" alt="" src={darkmodeIcon}></img>
         <img className="usericon" alt="" src={userIcon}></img>
