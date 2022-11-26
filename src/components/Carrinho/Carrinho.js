@@ -6,6 +6,7 @@ export default function Carrinho(params) {
     return (
       <>
         <NavBar />
+        
         <Container>
           <Titulo>
             <h1>Meu carrinho</h1>

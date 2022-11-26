@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import FootBar from "../FootBar/FootBar";
 import { ImgTitulo, ProdutoPage } from "./ProdutoStyled";
 
+
 export default function Produto() {
     const [produto, setProduto] = useState(null);
     const { id } = useParams();
