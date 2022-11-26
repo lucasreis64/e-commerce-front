@@ -5,6 +5,7 @@ import { Container, Titulo } from "./CarrinhoStyled";
 export default function Carrinho(params) {
     return (
       <>
+        <NavBar />
         
         <Container>
           <Titulo>

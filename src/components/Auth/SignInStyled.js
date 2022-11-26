@@ -7,12 +7,13 @@ export const LoginContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding: 30% 10%;
+    padding: 45% 10%;
     box-sizing: border-box;
     background-color: ${(props) => (props.noturno ? "#1C1C1C" : "black")};
     height: 100%;
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     animation: ${deslizarCima} ${tempo};
     img {
