@@ -10,7 +10,7 @@ import logoBlack from "../../img/logoBlack.png";
 
 let tempoMs;
 
-export default function SignIn(params) {
+export default function SignInPage(params) {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -61,81 +61,40 @@ export default function SignIn(params) {
 				src={logoBlack}
 				alt=''
 			/>
-			{!loading ? (
-				<>
-					<form
-						action='/hoje'
-						onSubmit={handleSubmit}
-					>
-						<input
-							name='email'
-							type='email'
-							placeholder='email'
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							required
-						/>
-						<input
-							name='password'
-							type='password'
-							placeholder='senha'
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							required
-						/>
-						<button>Entrar</button>
-						<label>
-							Permanecer conectado?
-							<input
-								className='check'
-								type='checkbox'
-								checked={permanecerConectado}
-								onChange={() => setPermanecerConectado(!permanecerConectado)}
-							/>
-						</label>
-					</form>
-					<Link to='/sign-up'>
-						<p>Primeira vez? Cadastre-se!</p>
-					</Link>
-				</>
-			) : (
-				<>
-					<form
-						action=''
-						onSubmit={handleSubmit}
-					>
-						<input
-							name='email'
-							type='email'
-							placeholder='email'
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							disabled
-						/>
-						<input
-							name='password'
-							type='password'
-							placeholder='senha'
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							disabled
-						/>
-						<button disabled>{carregamento}</button>
-						<label>
-							Permanecer conectado?
-							<input
-								disabled
-								className='check'
-								type='checkbox'
-								value={permanecerConectado}
-							/>
-						</label>
-					</form>
-					<Link to='/sign-up'>
-						<p>Primeira vez? Cadastre-se!</p>
-					</Link>
-				</>
-			)}
+			<form
+				action='/hoje'
+				onSubmit={handleSubmit}
+			>
+				<input
+					name='email'
+					type='email'
+					placeholder='email'
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+					required
+				/>
+				<input
+					name='password'
+					type='password'
+					placeholder='senha'
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+					required
+				/>
+				{loading ? carregamento : <button type='submit'>Cadastrar</button>}
+				<label>
+					Permanecer conectado?
+					<input
+						className='check'
+						type='checkbox'
+						checked={permanecerConectado}
+						onChange={() => setPermanecerConectado(!permanecerConectado)}
+					/>
+				</label>
+			</form>
+			<Link to='/sign-up'>
+				<p>Primeira vez? Cadastre-se!</p>
+			</Link>
 		</LoginContainer>
 	);
 }

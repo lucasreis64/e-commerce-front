@@ -1,13 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyle from "../../services/GlobalStyles";
-import SignIn from "../Auth/SignIn";
-import SignUp from "../Auth/SignUp";
+import SignInPage from "../../Pages/SignInPage/SignInPage";
+import SignUpPage from "../../Pages/SignUpPage/SignUpPage";
+import MainPage from "../../Pages/MainPage/MainPage";
 import { Screen, SmartPhoneContainer } from "./AppStyled";
 import Sessao from "../Sessao/Sessao";
 import Produto from "../Produto/Produto";
 import Carrinho from "../Carrinho/Carrinho";
-import Principal from "../Principal/Principal";
-import NavBar from "../NavBar/NavBar";
 import MinhaConta from "../MnhaConta/MinhaConta";
 
 function App() {
@@ -16,19 +15,18 @@ function App() {
 			<GlobalStyle />
 			<SmartPhoneContainer>
 				<BrowserRouter>
-					<NavBar />
 					<Routes>
 						<Route
 							path='/sign-in'
-							element={<SignIn />}
+							element={<SignInPage />}
 						/>
 						<Route
 							path='/sign-up'
-							element={<SignUp />}
+							element={<SignUpPage />}
 						/>
 						<Route
 							path='/'
-							element={<Principal />}
+							element={<MainPage />}
 						/>
 						<Route
 							path='/:sessao/:id'

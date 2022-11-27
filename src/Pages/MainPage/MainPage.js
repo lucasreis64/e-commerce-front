@@ -1,6 +1,6 @@
-import FootBar from "../FootBar/FootBar";
-import NavBar from "../NavBar/NavBar";
-import SideBar from "../SideBar/Sidebar";
+import FootBar from "../../components/FootBar/FootBar";
+import NavBar from "../../components/NavBar/NavBar";
+import SideBar from "../../components/SideBar/Sidebar";
 import axios from "axios";
 import { URLS } from "../../services/constants";
 import { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ import {
 	PrincipalStyled,
 	ProdutoeDescricao,
 	ProdutoStyled,
-} from "./PrincipalStyled";
+} from "./MainPageStyled";
 import { useParams } from "react-router-dom";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
 
@@ -33,6 +33,7 @@ export default function Principal({}) {
 
 	return (
 		<>
+			<NavBar />
 			<Container>
 				<PrincipalStyled>
 					<h1>Recomendados</h1>
