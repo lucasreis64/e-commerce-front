@@ -25,9 +25,18 @@ export default function SideBar({ active }) {
 					<Link to='/celular'>
 						<h1> Smarthphones </h1>
 					</Link>
+<<<<<<< HEAD
 					<Link to='/notebooks'>
 						<h1> Notebooks</h1>
 					</Link>
+=======
+					<Link to=''>
+						<h1> Notebooks</h1>
+					</Link>
+					<Link to=''>
+						<h1> PC Gamer</h1>
+					</Link>
+>>>>>>> 4a49127 (feat: added links to routes)
 					<Link to='/tv'>
 						<h1>TV</h1>
 					</Link>
