@@ -4,12 +4,7 @@ import SideBar from "../../components/SideBar/Sidebar";
 import axios from "axios";
 import { URLS } from "../../services/constants";
 import { useEffect, useState } from "react";
-import {
-	Container,
-	PrincipalStyled,
-	ProdutoeDescricao,
-	ProdutoStyled,
-} from "./MainPageStyled";
+import { Container, PrincipalStyled } from "./MainPageStyled";
 import { useParams } from "react-router-dom";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
 import Product from "../../components/Product/Product";
