@@ -25,11 +25,8 @@ export default function SideBar({ active }) {
 					<Link to='/celular'>
 						<h1> Smarthphones </h1>
 					</Link>
-					<Link to=''>
+					<Link to='/notebooks'>
 						<h1> Notebooks</h1>
-					</Link>
-					<Link to=''>
-						<h1> PC Gamer</h1>
 					</Link>
 					<Link to='/tv'>
 						<h1>TV</h1>
