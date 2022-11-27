@@ -13,7 +13,7 @@ import {
 import { useParams } from "react-router-dom";
 
 export default function Principal({}) {
-	const [produto, setProduto] = useState(null));
+	const [produto, setProduto] = useState(null);
 	const { id } = useParams();
 
 	useEffect(() => {
