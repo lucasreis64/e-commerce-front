@@ -7,7 +7,7 @@ import cartIcon from "../../img/cartIcon.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import SideBar from "../SideBar/Sidebar";
-import MinhaConta from "../MnhaConta/MinhaConta";
+import MinhaConta from "../MinhaConta/MinhaConta";
 
 export default function NavBar() {
 	const [sideBar, setSideBar] = useState(false);

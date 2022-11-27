@@ -33,7 +33,6 @@ export default function Principal({}) {
 
 	return (
 		<>
-			<NavBar />
 			<Container>
 				<PrincipalStyled>
 					<h1>Recomendados</h1>
