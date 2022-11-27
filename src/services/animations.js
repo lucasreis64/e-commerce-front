@@ -1,17 +1,30 @@
-import {keyframes} from "styled-components";
+import { keyframes } from "styled-components";
+import { ThreeDots } from "react-loader-spinner";
 
+export const carregamento = (
+	<ThreeDots
+		height='80'
+		width='80'
+		radius='9'
+		color='white'
+		ariaLabel='three-dots-loading'
+		wrapperStyle={{}}
+		wrapperClassName=''
+		visible={true}
+	/>
+);
 
-    export const deslizarEsquerda = keyframes`
+export const deslizarEsquerda = keyframes`
     from{opacity:0; transform: translateX(-600px)}
     to{opacity:1; transform: translateX(-0px)}
-    `
+    `;
 
-    export const opacidade=keyframes`
+export const opacidade = keyframes`
     0%{opacity:0}
     100%{opacity:1}
-    `
+    `;
 
-    export const variarQuatroVezes= keyframes`
+export const variarQuatroVezes = keyframes`
     0% {
         transform: translateY(-20%);
         opacity: 0.2;
@@ -31,9 +44,9 @@ import {keyframes} from "styled-components";
     100%{
         transform: translateY(0%);
         opacity: 1;
-    }`
+    }`;
 
-    export const variarSeisVezes= keyframes`
+export const variarSeisVezes = keyframes`
     0% {
         transform: translateY(-100%);
         opacity: 0.2;
@@ -61,19 +74,19 @@ import {keyframes} from "styled-components";
     100%{
         transform: translateY(0%);
         opacity: 1;
-    }`
+    }`;
 
-    export const trovao= keyframes`
+export const trovao = keyframes`
         from{filter: brightness(0.7);}
         to{filter: brightness(1);}
-    `
+    `;
 
-    export const deslizarCima= keyframes`
+export const deslizarCima = keyframes`
         from{opacity:0;transform: translateY(-600px)}
         to{opacity:1;transform: translateY(0px)}
-    `
+    `;
 
-    export const rolarCair = keyframes`
+export const rolarCair = keyframes`
         0% {
             transform-origin: top left;
             animation-timing-function: ease-in-out;
@@ -93,9 +106,9 @@ import {keyframes} from "styled-components";
             transform: translate3d(0, 700px, 0);
             opacity: 0;
         }
-    `
+    `;
 
-    export const tremerZoom= keyframes`
+export const tremerZoom = keyframes`
         from {
             transform: scale3d(1, 1, 1);
         }
@@ -111,15 +124,15 @@ import {keyframes} from "styled-components";
         to {
             transform: scale3d(1, 1, 1);
         }
-    `
+    `;
 
-    export const loading= keyframes`
+export const loading = keyframes`
         100%{
         transform:translateX(100%);
     }
-    `
+    `;
 
-    export const quicarFora = keyframes`
+export const quicarFora = keyframes`
         20% {
             transform: scale3d(.9, .9, .9);
         }
@@ -131,9 +144,9 @@ import {keyframes} from "styled-components";
             opacity: 0;
             transform: scale3d(.3, .3, .3);
         }
-    `
+    `;
 
-    export const quicarDentro = keyframes`
+export const quicarDentro = keyframes`
         from, 20%, 40%, 60%, 80%, to {
             animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
         }
@@ -159,5 +172,3 @@ import {keyframes} from "styled-components";
             transform: scale3d(1, 1, 1);
         }
     `;
-
-
