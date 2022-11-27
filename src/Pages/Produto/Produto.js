@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import FootBar from "../FootBar/FootBar";
+import FootBar from "../../components/FootBar/FootBar";
 import { ImgTitulo, ProdutoPage } from "./ProdutoStyled";
 import { URLS } from "../../services/constants";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
+import NavBar from "../../components/NavBar/NavBar";
+import { fidgedLoad } from "../../services/animations";
 
 export default function Produto() {
 	const [produto, setProduto] = useState(null);
@@ -22,8 +24,7 @@ export default function Produto() {
 	async function getProduto() {
 		try {
 			const productGet = await axios.get(`${URLS.PRODUCTS}?id=${id}`);
-			const product = separateIntoCategory(productGet.data);
-			setProduto(product);
+			setProduto(productGet.data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -31,8 +32,9 @@ export default function Produto() {
 
 	return (
 		<>
+			<NavBar />
 			{!produto ? (
-				"Carregando..."
+				fidgedLoad
 			) : (
 				<ProdutoPage disponivel={produto.inStock > 0 ? true : false}>
 					<ImgTitulo>
