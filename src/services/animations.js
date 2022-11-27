@@ -1,5 +1,5 @@
 import { keyframes } from "styled-components";
-import { ThreeDots } from "react-loader-spinner";
+import { ThreeDots, FidgetSpinner } from "react-loader-spinner";
 
 export const carregamento = (
 	<ThreeDots
@@ -12,6 +12,21 @@ export const carregamento = (
 		wrapperClassName=''
 		visible={true}
 	/>
+);
+
+export const fidgedLoad = (
+	<div style={{ display: "flex", justifyContent: "center", margin: "auto" }}>
+		<FidgetSpinner
+			visible={true}
+			height='80'
+			width='80'
+			ariaLabel='dna-loading'
+			wrapperStyle={{}}
+			wrapperClass='dna-wrapper'
+			ballColors={["#2b2d42", "#ef233c", "#7209b7"]}
+			backgroundColor='#edf2f4'
+		/>
+	</div>
 );
 
 export const deslizarEsquerda = keyframes`

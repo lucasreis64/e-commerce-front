@@ -13,10 +13,11 @@ import {
 import { useParams } from "react-router-dom";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
 import Product from "../../components/Product/Product";
+import { fidgedLoad } from "../../services/animations";
 
-export default function MainPage({}) {
+export default function MainPage() {
 	const [produto, setProduto] = useState(null);
-	const { id } = useParams();
+	console.log(produto);
 
 	useEffect(() => {
 		getProduto();
@@ -38,14 +39,16 @@ export default function MainPage({}) {
 			<Container>
 				<PrincipalStyled>
 					<h1>Recomendados</h1>
-					{produto?.map((product, index) => {
-						return (
-							<Product
-								key={index}
-								product={product}
-							/>
-						);
-					})}
+					{!produto
+						? fidgedLoad
+						: produto?.map((product, index) => {
+								return (
+									<Product
+										key={index}
+										product={product}
+									/>
+								);
+						  })}
 				</PrincipalStyled>
 				<FootBar />
 			</Container>
