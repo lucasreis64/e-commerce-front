@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { deslizarCima, tremerZoom } from "../../services/animations";
-import { tempo } from "../SignInPage/SignInPage";
+import { tempo } from "./SignInPage";
 
 export const LoginContainer = styled.div`
 	display: flex;

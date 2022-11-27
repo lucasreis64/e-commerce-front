@@ -5,7 +5,7 @@ import SignUpPage from "../../Pages/SignUpPage/SignUpPage";
 import MainPage from "../../Pages/MainPage/MainPage";
 import { Screen, SmartPhoneContainer } from "./AppStyled";
 import Sessao from "../Sessao/Sessao";
-import Produto from "../Produto/Produto";
+import Produto from "../../Pages/Produto/Produto";
 import Carrinho from "../Carrinho/Carrinho";
 import MinhaConta from "../MnhaConta/MinhaConta";
 
