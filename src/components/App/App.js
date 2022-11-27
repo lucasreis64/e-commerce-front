@@ -6,15 +6,17 @@ import MainPage from "../../Pages/MainPage/MainPage";
 import { Screen, SmartPhoneContainer } from "./AppStyled";
 import Sessao from "../Sessao/Sessao";
 import Produto from "../Produto/Produto";
-import Carrinho from "../Carrinho/Carrinho";
-import MinhaConta from "../MnhaConta/MinhaConta";
+import Carrinho from "../../Pages/Carrinho/Carrinho";
+import NavBar from "../NavBar/NavBar";
 
 function App() {
 	return (
 		<Screen>
 			<GlobalStyle />
 			<SmartPhoneContainer>
+        
 				<BrowserRouter>
+          <NavBar/>
 					<Routes>
 						<Route
 							path='/sign-in'
