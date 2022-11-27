@@ -9,7 +9,7 @@ export const ProductCard = styled.div`
 	background-color: white;
 	margin: auto;
 	margin-bottom: 15px;
-	box-shadow: 8px 8px 4px black;
+	box-shadow: 4px 4px 4px black;
 	border: 1px solid black;
 	border-radius: 5px;
 `;
@@ -24,9 +24,9 @@ export const InnerContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-	background: ${(props) => `url(${props.img}) center/80px 50px no-repeat`};
-	width: 80px;
-	height: 50px;
+	background: ${(props) => `url(${props.img}) center/120px 80px no-repeat`};
+	width: 120px;
+	height: 80px;
 `;
 
 export const TextContainer = styled.div`
