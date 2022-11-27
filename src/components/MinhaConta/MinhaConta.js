@@ -12,7 +12,9 @@ export default function MinhaConta({ active }) {
         <IconeExcluir>
           <img src={iconeExcluir} onClick={closeMyAccount} />
         </IconeExcluir>
-        <p>Minha conta</p>
+        
+        
+        
         <Link to="/sign-in">
           <p>Fazer Login</p>
         </Link>

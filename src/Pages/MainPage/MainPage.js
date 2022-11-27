@@ -35,6 +35,25 @@ export default function Principal({}) {
 		}
 	}
 
+	async function AdicionaNoCarrinho(title, img, price, id, amount) {
+    try {
+      const response = await axios.post("/entradas", {
+        title: title,
+		img: img,
+		price: price,
+		_id: id,
+		amount: amount,
+      });
+
+      if (response.status == 201) alert("Valor inserido com sucesso!");
+      window.location.href = "/mainpage";
+    } catch (e) {
+      console.log(e);
+      alert(e);
+      return false;
+    }
+  }
+
 	return (
 		<>
 			<Container>
@@ -51,7 +70,7 @@ export default function Principal({}) {
 											src={a.img}
 										/>
 										<p>{a.description}</p>
-										<h3>{a.price}</h3>
+										<h3>R$ {a.price}</h3>
 										<p>Em estoque: {a.inStock}</p>
 										<AdicionarAoCarrinho><img src = {cartIcon} /><h1>Adicionar ao carrinho</h1></AdicionarAoCarrinho>
 									</ProdutoeDescricao>
