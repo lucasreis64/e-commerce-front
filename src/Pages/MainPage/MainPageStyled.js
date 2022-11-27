@@ -21,8 +21,9 @@ export const PrincipalStyled = styled.div`
 		margin-bottom: 25px;
 		background-color: #d90429;
 		border: 1px solid black;
-		box-shadow: 5px 8px 3px black;
+		box-shadow: 3px 5px 3px black;
 		font-size: 25px;
+		font-weight: 700;
 		color: white;
 	}
 `;
