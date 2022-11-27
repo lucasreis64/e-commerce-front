@@ -33,12 +33,13 @@ export const TextContainer = styled.div`
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+	justify-content: center;
 	width: 200px;
 	height: 150px;
 	margin-right: 10px;
 `;
 export const Title = styled.p`
-	margin-top: 40px;
+	margin-bottom: 10px;
 	text-align: center;
 	font-size: 18px;
 `;
@@ -56,4 +57,26 @@ export const Description = styled.p`
 export const Price = styled.p`
 	text-align: center;
 	font-size: 20px;
+	font-weight: 900;
+	color: #d90429;
+`;
+
+export const AddToCart = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 60px;
+	margin-bottom: 10px;
+	background-color: #ef233c;
+	border-radius: 5px;
+	cursor: pointer;
+	color: white;
+	ion-icon {
+		font-size: 26px;
+		margin-right: 10px;
+	}
+	p {
+		font-weight: 700;
+	}
 `;
