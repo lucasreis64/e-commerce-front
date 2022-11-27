@@ -4,7 +4,9 @@ import SideBar from "../../components/SideBar/Sidebar";
 import axios from "axios";
 import { URLS } from "../../services/constants";
 import { useEffect, useState } from "react";
+import cartIcon from "../../img/cartIcon.png";
 import {
+	AdicionarAoCarrinho,
 	Container,
 	PrincipalStyled,
 	ProdutoeDescricao,
@@ -12,6 +14,8 @@ import {
 } from "./MainPageStyled";
 import { useParams } from "react-router-dom";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
+import carrinhoIcon from "../../img/carrinho.png";
+
 
 export default function Principal({}) {
 	const [produto, setProduto] = useState(null);
@@ -48,6 +52,8 @@ export default function Principal({}) {
 										/>
 										<p>{a.description}</p>
 										<h3>{a.price}</h3>
+										<p>Em estoque: {a.inStock}</p>
+										<AdicionarAoCarrinho><img src = {cartIcon} /><h1>Adicionar ao carrinho</h1></AdicionarAoCarrinho>
 									</ProdutoeDescricao>
 								</div>
 							</ProdutoStyled>
