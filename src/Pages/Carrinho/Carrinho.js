@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import FootBar from "../FootBar/FootBar";
-import NavBar from "../NavBar/NavBar";
+import FootBar from "../../components/FootBar/FootBar";
+import NavBar from "../../components/NavBar/NavBar";
 import axios from "axios";
 import carrinhoIcon from "../../img/carrinho.png";
 import { URLS } from "../../services/constants";
