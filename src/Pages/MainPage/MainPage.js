@@ -37,7 +37,6 @@ export default function MainPage() {
 
 	return (
 		<>
-			<NavBar />
 			<Container>
 				<PrincipalStyled>
 					{category ? <h1>{category.toUpperCase()}</h1> : <h1>RECOMENDADOS</h1>}

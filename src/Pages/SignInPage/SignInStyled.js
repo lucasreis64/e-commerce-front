@@ -13,6 +13,11 @@ export const LoginContainer = styled.div`
 	height: 100%;
 	width: 100%;
 	animation: ${deslizarCima} ${tempo};
+	z-index: 2;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	
 	img {
 		filter: drop-shadow(0px 12px 11px #224796);
 		width: 100px;
