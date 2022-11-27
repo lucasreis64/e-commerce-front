@@ -6,6 +6,7 @@ import MainPage from "../../Pages/MainPage/MainPage";
 import { Screen, SmartPhoneContainer } from "./AppStyled";
 import Sessao from "../Sessao/Sessao";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Produto from "../../Pages/Produto/Produto";
 import Carrinho from "../Carrinho/Carrinho";
 import MinhaConta from "../MnhaConta/MinhaConta";
@@ -14,6 +15,16 @@ import Produto from "../Produto/Produto";
 import Carrinho from "../../Pages/Carrinho/Carrinho";
 import NavBar from "../NavBar/NavBar";
 >>>>>>> 80ee756 (fix: navbar global & correçao animação auth)
+=======
+import Produto from "../Produto/Produto";
+import Carrinho from "../../Pages/Carrinho/Carrinho";
+import NavBar from "../NavBar/NavBar";
+=======
+import Produto from "../../Pages/Produto/Produto";
+import Carrinho from "../Carrinho/Carrinho";
+import MinhaConta from "../MnhaConta/MinhaConta";
+>>>>>>> d3f7242 (fix: some imports)
+>>>>>>> 6706a01 (fix: some imports)
 
 function App() {
 	return (
