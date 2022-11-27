@@ -17,8 +17,7 @@ import { fidgedLoad } from "../../services/animations";
 
 export default function MainPage() {
 	const [produto, setProduto] = useState(null);
-	console.log(produto);
-
+	const { category } = useParams();
 	useEffect(() => {
 		getProduto();
 	}, []);
@@ -38,7 +37,7 @@ export default function MainPage() {
 			<NavBar />
 			<Container>
 				<PrincipalStyled>
-					<h1>Recomendados</h1>
+					{category ? <h1>{category.toUpperCase()}</h1> : <h1>RECOMENDADOS</h1>}
 					{!produto
 						? fidgedLoad
 						: produto?.map((product, index) => {

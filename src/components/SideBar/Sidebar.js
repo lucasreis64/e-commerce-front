@@ -1,27 +1,41 @@
 import React from "react";
 import { Categorias, IconeExcluir, SideBarStyled } from "./SideBarStyled";
 import iconeExcluir from "../../img/Cancel.png";
+import { Link } from "react-router-dom";
 
 export default function SideBar({ active }) {
-  const closesidebar = () => {
-    active(false);
-  };
+	const closesidebar = () => {
+		active(false);
+	};
 
-  return (
-    <>
-      <SideBarStyled sidebar={active}>
-        <IconeExcluir>
-          <img onClick={closesidebar} src={iconeExcluir} />
-           </IconeExcluir>
+	return (
+		<>
+			<SideBarStyled sidebar={active}>
+				<IconeExcluir>
+					<img
+						onClick={closesidebar}
+						src={iconeExcluir}
+					/>
+				</IconeExcluir>
 
-        <Categorias>
-          <h1> Smarthphones </h1>
-          <h1> Notebooks</h1>
-          <h1> PC Gamer</h1>
-          <h1>TV</h1>
-          <h1>Outros</h1>
-        </Categorias>
-      </SideBarStyled>
-    </>
-  );
+				<Categorias>
+					<Link to='/'>
+						<h1>Todos</h1>
+					</Link>
+					<Link to='/celular'>
+						<h1> Smarthphones </h1>
+					</Link>
+					<Link to=''>
+						<h1> Notebooks</h1>
+					</Link>
+					<Link to=''>
+						<h1> PC Gamer</h1>
+					</Link>
+					<Link to='/tv'>
+						<h1>TV</h1>
+					</Link>
+				</Categorias>
+			</SideBarStyled>
+		</>
+	);
 }
