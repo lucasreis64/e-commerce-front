@@ -20,13 +20,21 @@ export default function MainPage() {
 	const { category } = useParams();
 	useEffect(() => {
 		getProduto();
-	}, []);
+	}, [category]);
 
 	async function getProduto() {
 		try {
-			const productGet = await axios.get(URLS.PRODUCTS);
-			const products = separateIntoCategory(productGet.data);
-			setProduto(products);
+			if (category) {
+				const productGet = await axios.get(
+					`${URLS.PRODUCTS}?category=${category}`
+				);
+				const products = productGet.data.products;
+				setProduto(products);
+			} else {
+				const productGet = await axios.get(URLS.PRODUCTS);
+				const products = separateIntoCategory(productGet.data);
+				setProduto(products);
+			}
 		} catch (error) {
 			console.log(error);
 		}

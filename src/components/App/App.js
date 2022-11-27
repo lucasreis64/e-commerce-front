@@ -29,6 +29,10 @@ function App() {
 							element={<MainPage />}
 						/>
 						<Route
+							path='/:category'
+							element={<MainPage />}
+						/>
+						<Route
 							path='/:sessao/:id'
 							element={<Sessao />}
 						/>
