@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	background-color: #514c4c;
+	background-color: #8d99ae;
 `;
 
 export const PrincipalStyled = styled.div`
 	display: flex;
 	flex-flow: column nowrap;
-	background-color: #514c4c;
+	background-color: #8d99ae;
 	margin-bottom: 10%;
 
 	h1 {
@@ -19,7 +19,7 @@ export const PrincipalStyled = styled.div`
 		margin: auto;
 		margin-top: 25px;
 		margin-bottom: 25px;
-		background-color: #ff3b43;
+		background-color: #d90429;
 		border: 1px solid black;
 		box-shadow: 5px 8px 3px black;
 		font-size: 25px;
