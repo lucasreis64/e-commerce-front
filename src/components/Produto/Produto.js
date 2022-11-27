@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import FootBar from "../FootBar/FootBar";
 import { ImgTitulo, ProdutoPage } from "./ProdutoStyled";
 import { URLS } from "../../services/constants";
+import { separateIntoCategory } from "../../services/separateIntoCategory";
 
 export default function Produto() {
 	const [produto, setProduto] = useState(null);
@@ -21,8 +22,8 @@ export default function Produto() {
 	async function getProduto() {
 		try {
 			const productGet = await axios.get(`${URLS.PRODUCTS}?id=${id}`);
-			console.log(productGet.data);
-			setProduto(productGet.data);
+			const product = separateIntoCategory(productGet.data);
+			setProduto(product);
 		} catch (error) {
 			console.log(error);
 		}

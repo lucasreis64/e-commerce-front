@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { URLS } from "../../services/constants";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { carregamento } from "../../services/constants";
+import { carregamento } from "../../services/animations";
 import Swal from "sweetalert2";
 import { contexto } from "../../context/context";
 import { LoginContainer } from "./SignInStyled";

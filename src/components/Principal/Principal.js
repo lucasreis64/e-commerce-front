@@ -11,6 +11,7 @@ import {
 	ProdutoStyled,
 } from "./PrincipalStyled";
 import { useParams } from "react-router-dom";
+import { separateIntoCategory } from "../../services/separateIntoCategory";
 
 export default function Principal({}) {
 	const [produto, setProduto] = useState(null);
@@ -23,8 +24,8 @@ export default function Principal({}) {
 	async function getProduto() {
 		try {
 			const productGet = await axios.get(URLS.PRODUCTS);
-			console.log(productGet.data.products);
-			setProduto(productGet.data.products);
+			const products = separateIntoCategory(productGet.data);
+			setProduto(products);
 		} catch (error) {
 			console.log(error);
 		}

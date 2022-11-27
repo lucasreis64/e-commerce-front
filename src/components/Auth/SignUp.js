@@ -2,7 +2,7 @@ import { useState } from "react";
 import { URLS } from "../../services/constants";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { carregamento } from "../../services/constants";
+import { carregamento } from "../../services/animations";
 import Swal from "sweetalert2";
 import { CadastroContainer } from "./SignUpStyled";
 import logoBlack from "../../img/logoBlack.png";
