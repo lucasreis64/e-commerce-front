@@ -12,8 +12,9 @@ import {
 } from "./MainPageStyled";
 import { useParams } from "react-router-dom";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
+import Product from "../../components/Product/Product";
 
-export default function Principal({}) {
+export default function MainPage({}) {
 	const [produto, setProduto] = useState(null);
 	const { id } = useParams();
 
@@ -37,21 +38,12 @@ export default function Principal({}) {
 			<Container>
 				<PrincipalStyled>
 					<h1>Recomendados</h1>
-					{produto?.map((a, b) => {
+					{produto?.map((product, index) => {
 						return (
-							<ProdutoStyled>
-								<div key={b}>
-									<h2>{a.title}</h2>
-									<ProdutoeDescricao>
-										<img
-											alt=''
-											src={a.img}
-										/>
-										<p>{a.description}</p>
-										<h3>{a.price}</h3>
-									</ProdutoeDescricao>
-								</div>
-							</ProdutoStyled>
+							<Product
+								key={index}
+								product={product}
+							/>
 						);
 					})}
 				</PrincipalStyled>

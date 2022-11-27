@@ -1,60 +1,28 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #514c4c;
+	background-color: #514c4c;
 `;
 
 export const PrincipalStyled = styled.div`
-  background-color: #514c4c;
-  margin-bottom: 10%;
+	display: flex;
+	flex-flow: column nowrap;
+	background-color: #514c4c;
+	margin-bottom: 10%;
 
-  h1 {
-    margin: 5%;
-    font-size: 25px;
-    color: white;
-  }
-`;
-
-export const ProdutoStyled = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  h2 {
-    margin: 10%;
-    font-size: 20px;
-  }
-  img {
-    width: 80%;
-    height: 200px;
-    background-color: blue;
-  }
-  h2 {
-    color: black;
-    background-color: white;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 5px 5px 5px darkblue;
-  }
-`;
-
-export const ProdutoeDescricao = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-
-
-  h2{
-    color: blue;
-  }
-  p{
-    margin-top: 20px;
-  }
-
-  h3{
-    margin-top: 10px;
-    color: lightgreen;
-  }
+	h1 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 250px;
+		height: 60px;
+		margin: auto;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		background-color: #ff3b43;
+		border: 1px solid black;
+		box-shadow: 5px 8px 3px black;
+		font-size: 25px;
+		color: white;
+	}
 `;
