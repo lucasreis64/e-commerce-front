@@ -1,86 +1,95 @@
 import FootBar from "../../components/FootBar/FootBar";
-import NavBar from "../../components/NavBar/NavBar";
-import SideBar from "../../components/SideBar/Sidebar";
 import axios from "axios";
 import { URLS } from "../../services/constants";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import cartIcon from "../../img/cartIcon.png";
 import {
-	AdicionarAoCarrinho,
-	Container,
-	PrincipalStyled,
-	ProdutoeDescricao,
-	ProdutoStyled,
+  AdicionarAoCarrinho,
+  Container,
+  PrincipalStyled,
+  ProdutoeDescricao,
+  ProdutoStyled,
 } from "./MainPageStyled";
-import { useParams } from "react-router-dom";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
-import carrinhoIcon from "../../img/carrinho.png";
-
+import { contexto } from "../../context/context";
 
 export default function Principal({}) {
-	const [produto, setProduto] = useState(null);
-	const { id } = useParams();
+  const [produtos, setProdutos] = useState([]);
+  const context = useContext(contexto);
 
-	useEffect(() => {
-		getProduto();
-	}, []);
+  useEffect(() => {
+    getProduto();
+  }, []);
 
-	async function getProduto() {
-		try {
-			const productGet = await axios.get(URLS.PRODUCTS);
-			const products = separateIntoCategory(productGet.data);
-			setProduto(products);
-		} catch (error) {
-			console.log(error);
-		}
-	}
-
-	async function AdicionaNoCarrinho(title, img, price, id, amount) {
+  async function getProduto() {
     try {
-      const response = await axios.post("/entradas", {
-        title: title,
-		img: img,
-		price: price,
-		_id: id,
-		amount: amount,
-      });
+      const productGet = await axios.get(URLS.PRODUCTS);
+      const products = separateIntoCategory(productGet.data);
+      setProdutos(products);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
+  async function adicionaNoCarrinho(id, img, price, title, amount) {
+    try {
+      console.log(context.token);
+      const response = await axios.post(
+        URLS.CART,
+        { _id: id, img: img, price, title, amount },
+        {
+          headers: {
+            Authorization: `Bearer ${context.token}`,
+          },
+        }
+      );
+      // console.log(response);
       if (response.status == 201) alert("Valor inserido com sucesso!");
       window.location.href = "/mainpage";
     } catch (e) {
       console.log(e);
-      alert(e);
-      return false;
+      // alert(e);
+      console.log(e);
     }
   }
 
-	return (
-		<>
-			<Container>
-				<PrincipalStyled>
-					<h1>Recomendados</h1>
-					{produto?.map((a, b) => {
-						return (
-							<ProdutoStyled>
-								<div key={b}>
-									<h2>{a.title}</h2>
-									<ProdutoeDescricao>
-										<img
-											alt=''
-											src={a.img}
-										/>
-										<p>{a.description}</p>
-										<h3>R$ {a.price}</h3>
-										<p>Em estoque: {a.inStock}</p>
-										<AdicionarAoCarrinho><img src = {cartIcon} /><h1>Adicionar ao carrinho</h1></AdicionarAoCarrinho>
-									</ProdutoeDescricao>
-								</div>
-							</ProdutoStyled>
-						);
-					})}
-				</PrincipalStyled>
-				<FootBar />
-			</Container>
-		</>
-	);
+  return (
+    <>
+      <Container>
+        <PrincipalStyled>
+          <h1>Recomendados</h1>
+          {produtos?.map((produto) => {
+            return (
+              <ProdutoStyled>
+                <div key={produto.id}>
+                  <h2>{produto.title}</h2>
+                  <ProdutoeDescricao>
+                    <img alt="" src={produto.img} />
+                    <p>{produto.description}</p>
+                    <h3>R$ {produto.price}</h3>
+                    <p>Em estoque: {produto.inStock}</p>
+                    <AdicionarAoCarrinho
+                      onClick={() =>
+                        adicionaNoCarrinho(
+                          produto.id,
+                          produto.img,
+                          produto.price,
+                          produto.title,
+                          1
+                        )
+                      }
+                    >
+                      <img src={cartIcon} />
+                      <h1>Adicionar ao carrinho</h1>
+                    </AdicionarAoCarrinho>
+                  </ProdutoeDescricao>
+                </div>
+              </ProdutoStyled>
+            );
+          })}
+        </PrincipalStyled>
+        <FootBar />
+      </Container>
+    </>
+  );
 }
