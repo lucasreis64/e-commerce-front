@@ -55,10 +55,11 @@ export default function Carrinho(params) {
 
     async function calcularTotal(product) {
         let total = 0;
-        product.map((p, idx) => {
-            return (total +=
-                Number(p.price.replace(",", ".")) * Number(p.amount));
-        });
+        if (product.length > 0)
+            product.map((p, idx) => {
+                return (total +=
+                    Number(p.price.replace(",", ".")) * Number(p.amount));
+            });
         console.log(total);
         setTotal(`R$${total.toFixed(2).replace(".", ",")}`);
     }
@@ -66,9 +67,11 @@ export default function Carrinho(params) {
     async function finalizarPedido() {
         try {
             console.log(produto);
+            const { title, img, price, amount } = produto;
+            console.log(produto)
             const response = await axios.post(
                 URLS.CHECKOUT,
-                { ...produto, value: total },
+                { title: title, img: img, price: price, amount: amount, value: total },
                 {
                     headers: {
                         Authorization: `Bearer ${token.token}`,
@@ -85,10 +88,11 @@ export default function Carrinho(params) {
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Sim, quero voltar!",
             }).then((result) => {
-                if (result.isConfirmed) navigate("/carrinho");
+                if (result.isConfirmed) navigate("/");
                 else return;
             });
         } catch (e) {
+            setQuantity(!quantity);
             console.log(e);
         }
     }
@@ -148,23 +152,27 @@ export default function Carrinho(params) {
                                   </Produto>
                               );
                           })
-                        : "carregando..."}
+                        : "Sem itens no carrinho!"}
                 </ContainerProdutos>
 
-                <ContainerFinalizarPedido>
-                    <FinalizarPedido>
-                        <h1>Total: {total}</h1>
-                    </FinalizarPedido>
-                    <FinalizarPedido
-                        onClick={() => {
-                            finalizarPedido();
-                        }}
-                    >
-                        <img src={carrinhoIcon} alt="" />
+                {produto ? (
+                    <ContainerFinalizarPedido>
+                        <FinalizarPedido>
+                            <h1>Total: {total}</h1>
+                        </FinalizarPedido>
+                        <FinalizarPedido
+                            onClick={() => {
+                                finalizarPedido();
+                            }}
+                        >
+                            <img src={carrinhoIcon} alt="" />
 
-                        <h1>Finalizar Pedido</h1>
-                    </FinalizarPedido>
-                </ContainerFinalizarPedido>
+                            <h1>Finalizar Pedido</h1>
+                        </FinalizarPedido>
+                    </ContainerFinalizarPedido>
+                ) : (
+                    true
+                )}
             </Container>
         </>
     );
