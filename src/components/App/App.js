@@ -8,6 +8,7 @@ import Sessao from "../Sessao/Sessao";
 import Produto from "../Produto/Produto";
 import Carrinho from "../../Pages/Carrinho/Carrinho";
 import NavBar from "../NavBar/NavBar";
+import Categoria from "../Categoria/Categoria";
 
 function App() {
 	return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/:sessao/:id" element={<Sessao />} />
             <Route path="/produto/:id" element={<Produto />} />
             <Route path="/carrinho" element={<Carrinho />} />
+            <Route path= "/categoria/:categoria" element={<Categoria />} />
+            
             
           </Routes>
         </BrowserRouter>
