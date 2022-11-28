@@ -29,7 +29,9 @@ export default function Principal({}) {
     try {
       const productGet = await axios.get(
         `${URLS.PRODUCTS}?category=${categoria}`
+        
       );
+      console.log(categoria);
 
       const product = productGet.data.products;
       console.log(product);

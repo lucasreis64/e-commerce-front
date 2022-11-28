@@ -9,31 +9,32 @@ export default function SideBar({ active }) {
   };
 
   return (
-    <>
-      <SideBarStyled sidebar={active}>
-        <IconeExcluir>
-          <img onClick={closesidebar} src={iconeExcluir} />
-        </IconeExcluir>
+    <SideBarStyled sidebar={active}>
+      <IconeExcluir>
+        <img onClick={closesidebar} src={iconeExcluir} />
+      </IconeExcluir>
 
-        <Categorias>
-          <Link to="/categoria/celular">
-            <h1> Smarthphones </h1>
-          </Link>
-          <Link to="/categoria/notebooks">
-            <h1> Notebooks</h1>
-          </Link>
-          <Link to="/categoria/games">
-            <h1> PC Gamer</h1>
-          </Link>
-          <Link to="/categoria/tv">
-            {" "}
-            <h1>TV</h1>
-          </Link>
-          <Link to="/categoria/hardware">
-            <h1>Outros</h1>
-          </Link>
-        </Categorias>
-      </SideBarStyled>
-    </>
+      <Categorias>
+        <Link to="/">
+          <h1> Recomendados </h1>
+        </Link>
+        <Link to="/categoria/celular">
+          <h1> Smarthphones </h1>
+        </Link>
+        <Link to="/categoria/notebooks">
+          <h1> Notebooks</h1>
+        </Link>
+        <Link to="/categoria/games">
+          <h1> Área Gamer </h1>
+        </Link>
+        <Link to="/categoria/tv">
+          {" "}
+          <h1>TV</h1>
+        </Link>
+        <Link to="/categoria/hardware">
+          <h1>Hardwares</h1>
+        </Link>
+      </Categorias>
+    </SideBarStyled>
   );
 }
