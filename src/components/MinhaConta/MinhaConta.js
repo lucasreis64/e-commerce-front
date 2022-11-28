@@ -6,16 +6,11 @@ import { contexto } from "../../context/context";
 
 export default function MinhaConta({ active }) {
   const navigate = useNavigate();
-  const context = useContext(contexto);
-
-  useEffect(() => {
-    const isLoggedIn = JSON.parse(localStorage.getItem("userInfo"));
-    context.setToken(isLoggedIn?.token);
-  }, []);
+  const { token, setToken } = useContext(contexto);
 
   const logOut = () => {
     localStorage.clear("userInfo");
-    context.setToken("");
+    setToken(null);
     navigate("/");
   };
 
@@ -28,7 +23,7 @@ export default function MinhaConta({ active }) {
         <IconeExcluir>
           <img src={iconeExcluir} onClick={closeMyAccount} />
         </IconeExcluir>
-        {context.token ? (
+        {token ? (
           <>
             <Link to="/myaccount">
               <p>Minha conta</p>

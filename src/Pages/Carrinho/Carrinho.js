@@ -18,6 +18,7 @@ import {
 import { contexto } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 import QuantidadeProd from "./QuantidadeProduto";
+import Swal from "sweetalert2";
 
 export default function Carrinho(params) {
     const [produto, setProduto] = useState(null);
@@ -60,6 +61,36 @@ export default function Carrinho(params) {
         });
         console.log(total);
         setTotal(`R$${total.toFixed(2).replace(".", ",")}`);
+    }
+
+    async function finalizarPedido() {
+        try {
+            console.log(produto);
+            const response = await axios.post(
+                URLS.CHECKOUT,
+                { ...produto, value: total },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token.token}`,
+                    },
+                }
+            );
+            console.log(response);
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Deseja voltar a página principal?",
+                icon: "success",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Sim, quero voltar!",
+            }).then((result) => {
+                if (result.isConfirmed) navigate("/carrinho");
+                else return;
+            });
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (
@@ -126,7 +157,7 @@ export default function Carrinho(params) {
                     </FinalizarPedido>
                     <FinalizarPedido
                         onClick={() => {
-                            navigate("/finalizar");
+                            finalizarPedido();
                         }}
                     >
                         <img src={carrinhoIcon} alt="" />

@@ -81,8 +81,8 @@ export default function Principal({}) {
               <ProdutoStyled>
                 <div key={produto._id}>
                   <h2>{produto.title}</h2>
-                  <ProdutoeDescricao onClick={()=>paginaProduto(produto._id)}>
-                    <img  alt="" src={produto.img} />
+                  <ProdutoeDescricao >
+                    <img onClick={()=>paginaProduto(produto._id)} alt="" src={produto.img} />
                     <p>{produto.description}</p>
                     <h3>R$ {produto.price}</h3>
                     <p>Em estoque: {produto.inStock}</p>
