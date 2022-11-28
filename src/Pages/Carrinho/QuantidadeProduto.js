@@ -15,7 +15,7 @@ export default function QuantidadeProd({p, setQuantity,quantity}) {
 
     async function mudarQuantidade(num, id) {
         let quant = Number(quantidade)+num
-        setQuantidade(quant);
+        if (quant>=0) setQuantidade(quant);
         
         try {
             const att = await axios.put(

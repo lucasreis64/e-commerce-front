@@ -12,10 +12,13 @@ import {
 } from "./MainPageStyled";
 import { separateIntoCategory } from "../../services/separateIntoCategory";
 import { contexto } from "../../context/context";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Principal({}) {
   const [produtos, setProdutos] = useState([]);
-  const context = useContext(contexto);
+  const { token } = useContext(contexto);
+  const navigate = useNavigate()
 
   useEffect(() => {
     getProduto();
@@ -33,24 +36,39 @@ export default function Principal({}) {
 
   async function adicionaNoCarrinho(id, img, price, title, amount) {
     try {
-      console.log(context.token);
+      console.log(produtos);
       const response = await axios.post(
         URLS.CART,
         { _id: id, img: img, price, title, amount },
         {
           headers: {
-            Authorization: `Bearer ${context.token}`,
+            Authorization: `Bearer ${token.token}`,
           },
         }
       );
-      // console.log(response);
-      if (response.status == 201) alert("Valor inserido com sucesso!");
-      window.location.href = "/mainpage";
+    console.log(response);
+    Swal.fire({
+      title: 'Sucesso!',
+      text: "Deseja visitar o carrinho?",
+      icon: 'success',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, quero visitar!'
+  }).then((result) => {
+      if (result.isConfirmed) navigate('/carrinho')
+
+      else return
+  })
     } catch (e) {
       console.log(e);
       // alert(e);
       console.log(e);
     }
+  }
+
+  function paginaProduto (id) {
+    navigate(`/produto/${id}`)
   }
 
   return (
@@ -61,17 +79,17 @@ export default function Principal({}) {
           {produtos?.map((produto) => {
             return (
               <ProdutoStyled>
-                <div key={produto.id}>
+                <div key={produto._id}>
                   <h2>{produto.title}</h2>
-                  <ProdutoeDescricao>
-                    <img alt="" src={produto.img} />
+                  <ProdutoeDescricao onClick={()=>paginaProduto(produto._id)}>
+                    <img  alt="" src={produto.img} />
                     <p>{produto.description}</p>
                     <h3>R$ {produto.price}</h3>
                     <p>Em estoque: {produto.inStock}</p>
                     <AdicionarAoCarrinho
                       onClick={() =>
                         adicionaNoCarrinho(
-                          produto.id,
+                          produto._id,
                           produto.img,
                           produto.price,
                           produto.title,
