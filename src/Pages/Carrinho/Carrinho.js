@@ -67,7 +67,7 @@ export default function Carrinho(params) {
     async function finalizarPedido() {
         try {
             console.log(produto);
-            const { title, img, price, amount } = produto;
+            const { title, img, price, amount } = produto[0];
             console.log(produto)
             const response = await axios.post(
                 URLS.CHECKOUT,
