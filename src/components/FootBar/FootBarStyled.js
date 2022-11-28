@@ -20,18 +20,16 @@ export const Categorias = styled.div`
 `;
 
 export const OutrasInformacoes = styled.div`
-
   margin: 7%;
 `;
 
 export const RedesSociais = styled.div`
-  
   p {
     margin: 5%;
     color: #6256ea;
   }
 
-  img{
+  img {
     width: 40px;
     height: 40px;
     margin: 5%;
@@ -40,15 +38,11 @@ export const RedesSociais = styled.div`
 `;
 
 export const Icons = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    
-    img {
+  display: flex;
+  justify-content: space-evenly;
+
+  img {
     width: 40px;
     height: 40px;
-    
-    
-    
   }
 `;
-
