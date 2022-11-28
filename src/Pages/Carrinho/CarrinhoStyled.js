@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: #514c4c;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
 `;
 
 export const Titulo = styled.div`

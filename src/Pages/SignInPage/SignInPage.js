@@ -20,16 +20,6 @@ export default function SignInPage(params) {
   const { permanecerConectado, setPermanecerConectado } = useContext(contexto);
   tempoMs = 400;
 
-  //   useEffect(() => {
-  //     const userInfoCopy = JSON.parse(localStorage.getItem("userInfo"));
-
-  //     if (userInfoCopy !== null) {
-  //       setUserInfo(userInfoCopy);
-  //       navigate("/");
-  //     }
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   }, []);
-
   async function handleSubmit(event) {
     try {
       event.preventDefault();
@@ -38,10 +28,10 @@ export default function SignInPage(params) {
         email: email,
         password: password,
       });
-
-      const userInfoSerializada = JSON.stringify(login.data);
-      localStorage.setItem("userInfo", userInfoSerializada);
-      setUserInfo(login.data);
+      if(permanecerConectado) {
+        const userInfoSerializada = JSON.stringify(login.data);
+        localStorage.setItem("userInfo", userInfoSerializada);
+      }
       context.setToken(login.data.token);
       navigate("/");
     } catch (e) {
