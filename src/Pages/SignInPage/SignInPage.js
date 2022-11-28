@@ -16,19 +16,8 @@ export default function SignInPage(params) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { setUserInfo } = useContext(contexto);
   const { permanecerConectado, setPermanecerConectado } = useContext(contexto);
   tempoMs = 400;
-
-  //   useEffect(() => {
-  //     const userInfoCopy = JSON.parse(localStorage.getItem("userInfo"));
-
-  //     if (userInfoCopy !== null) {
-  //       setUserInfo(userInfoCopy);
-  //       navigate("/");
-  //     }
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   }, []);
 
   async function handleSubmit(event) {
     try {
@@ -38,11 +27,11 @@ export default function SignInPage(params) {
         email: email,
         password: password,
       });
-
-      const userInfoSerializada = JSON.stringify(login.data);
-      localStorage.setItem("userInfo", userInfoSerializada);
-      setUserInfo(login.data);
-      context.setToken(login.data.token);
+      if(permanecerConectado) {
+        const userInfoSerializada = JSON.stringify(login.data);
+        localStorage.setItem("userInfo", userInfoSerializada);
+      }
+      context.setToken(login.data);
       navigate("/");
     } catch (e) {
       setLoading(false);
