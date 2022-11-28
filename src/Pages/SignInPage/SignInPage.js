@@ -16,7 +16,6 @@ export default function SignInPage(params) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { setUserInfo } = useContext(contexto);
   const { permanecerConectado, setPermanecerConectado } = useContext(contexto);
   tempoMs = 400;
 
@@ -32,7 +31,7 @@ export default function SignInPage(params) {
         const userInfoSerializada = JSON.stringify(login.data);
         localStorage.setItem("userInfo", userInfoSerializada);
       }
-      context.setToken(login.data.token);
+      context.setToken(login.data);
       navigate("/");
     } catch (e) {
       setLoading(false);
