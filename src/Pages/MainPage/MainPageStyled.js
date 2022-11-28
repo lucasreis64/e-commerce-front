@@ -58,3 +58,27 @@ export const ProdutoeDescricao = styled.div`
     color: lightgreen;
   }
 `;
+
+export const AdicionarAoCarrinho = styled.div`
+  width: 90%;
+  height: 60px;
+  background-color: darkgreen;
+  margin-top: 10%;
+  border-radius: 5px;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+  }
+
+  img{
+    width: 30px;
+    height: 30px;
+    background-color: darkgreen;
+  }
+`;

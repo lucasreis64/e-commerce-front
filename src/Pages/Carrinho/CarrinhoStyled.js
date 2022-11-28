@@ -24,7 +24,7 @@ export const ContainerProdutos = styled.div`
 
 export const Produto = styled.div`
   width: 90%;
-  height: 250px;
+  height: 180px;
   background-color: darkgray;
   margin-top: 10%;
 
@@ -52,6 +52,11 @@ export const ImagemProduto = styled.div`
   width: 30%;
   height: 65%;
   background-color: gainsboro;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const Preço = styled.div`
@@ -90,4 +95,20 @@ export const FinalizarPedido = styled.div`
     color: white;
   }
   
+`;
+
+export const DescriçãoProduto = styled.div`
+
+width: 70%;
+height: 100%;
+margin: 4px;
+flex-wrap: wrap;
+display: flex;
+
+`
+
+export const ImagemEDescrição = styled.div`
+
+display: flex;
+
 `;

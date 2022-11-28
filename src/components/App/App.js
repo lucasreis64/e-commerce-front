@@ -11,42 +11,24 @@ import NavBar from "../NavBar/NavBar";
 
 function App() {
 	return (
-		<Screen>
-			<GlobalStyle />
-			<SmartPhoneContainer>
-        
-				<BrowserRouter>
-          <NavBar/>
-					<Routes>
-						<Route
-							path='/sign-in'
-							element={<SignInPage />}
-						/>
-						<Route
-							path='/sign-up'
-							element={<SignUpPage />}
-						/>
-						<Route
-							path='/'
-							element={<MainPage />}
-						/>
-						<Route
-							path='/:sessao/:id'
-							element={<Sessao />}
-						/>
-						<Route
-							path='/produto/:id'
-							element={<Produto />}
-						/>
-						<Route
-							path='/carrinho'
-							element={<Carrinho />}
-						/>
-					</Routes>
-				</BrowserRouter>
-			</SmartPhoneContainer>
-		</Screen>
-	);
+    <Screen>
+      <GlobalStyle />
+      <SmartPhoneContainer>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/sign-in" element={<SignInPage />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
+            <Route path="/" element={<MainPage />} />
+            <Route path="/:sessao/:id" element={<Sessao />} />
+            <Route path="/produto/:id" element={<Produto />} />
+            <Route path="/carrinho" element={<Carrinho />} />
+            
+          </Routes>
+        </BrowserRouter>
+      </SmartPhoneContainer>
+    </Screen>
+  );
 }
 
 export default App;
