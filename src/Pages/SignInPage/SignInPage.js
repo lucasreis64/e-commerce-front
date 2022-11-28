@@ -65,7 +65,7 @@ export default function SignInPage(params) {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        {loading ? carregamento : <button type="submit">Cadastrar</button>}
+        {loading ? carregamento : <button type="submit">Entrar</button>}
         <label>
           Permanecer conectado?
           <input
